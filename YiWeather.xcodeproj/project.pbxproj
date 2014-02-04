@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		35FC1C7818A07C980055DABD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FC1C7718A07C980055DABD /* Foundation.framework */; };
+		35FC1C7A18A07C980055DABD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FC1C7918A07C980055DABD /* CoreGraphics.framework */; };
+		35FC1C7C18A07C980055DABD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FC1C7B18A07C980055DABD /* UIKit.framework */; };
+		35FC1C8218A07C980055DABD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 35FC1C8018A07C980055DABD /* InfoPlist.strings */; };
+		35FC1C8418A07C980055DABD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 35FC1C8318A07C980055DABD /* main.m */; };
+		35FC1C8818A07C980055DABD /* YIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35FC1C8718A07C980055DABD /* YIAppDelegate.m */; };
+		35FC1C8B18A07C980055DABD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35FC1C8918A07C980055DABD /* Main.storyboard */; };
+		35FC1C8E18A07C980055DABD /* YIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35FC1C8D18A07C980055DABD /* YIViewController.m */; };
+		35FC1C9018A07C980055DABD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35FC1C8F18A07C980055DABD /* Images.xcassets */; };
+		35FC1C9718A07C990055DABD /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FC1C9618A07C990055DABD /* XCTest.framework */; };
+		35FC1C9818A07C990055DABD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FC1C7718A07C980055DABD /* Foundation.framework */; };
+		35FC1C9918A07C990055DABD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FC1C7B18A07C980055DABD /* UIKit.framework */; };
+		35FC1CA118A07C990055DABD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 35FC1C9F18A07C990055DABD /* InfoPlist.strings */; };
+		35FC1CA318A07C990055DABD /* YiWeatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 35FC1CA218A07C990055DABD /* YiWeatherTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		35FC1C9A18A07C990055DABD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 35FC1C6C18A07C980055DABD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 35FC1C7318A07C980055DABD;
+			remoteInfo = YiWeather;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		35FC1C7418A07C980055DABD /* YiWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YiWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		35FC1C7718A07C980055DABD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		35FC1C7918A07C980055DABD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		35FC1C7B18A07C980055DABD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		35FC1C7F18A07C980055DABD /* YiWeather-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "YiWeather-Info.plist"; sourceTree = "<group>"; };
+		35FC1C8118A07C980055DABD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		35FC1C8318A07C980055DABD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		35FC1C8518A07C980055DABD /* YiWeather-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YiWeather-Prefix.pch"; sourceTree = "<group>"; };
+		35FC1C8618A07C980055DABD /* YIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YIAppDelegate.h; sourceTree = "<group>"; };
+		35FC1C8718A07C980055DABD /* YIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YIAppDelegate.m; sourceTree = "<group>"; };
+		35FC1C8A18A07C980055DABD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		35FC1C8C18A07C980055DABD /* YIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YIViewController.h; sourceTree = "<group>"; };
+		35FC1C8D18A07C980055DABD /* YIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YIViewController.m; sourceTree = "<group>"; };
+		35FC1C8F18A07C980055DABD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		35FC1C9518A07C990055DABD /* YiWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YiWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		35FC1C9618A07C990055DABD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		35FC1C9E18A07C990055DABD /* YiWeatherTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "YiWeatherTests-Info.plist"; sourceTree = "<group>"; };
+		35FC1CA018A07C990055DABD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		35FC1CA218A07C990055DABD /* YiWeatherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YiWeatherTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		35FC1C7118A07C980055DABD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35FC1C7A18A07C980055DABD /* CoreGraphics.framework in Frameworks */,
+				35FC1C7C18A07C980055DABD /* UIKit.framework in Frameworks */,
+				35FC1C7818A07C980055DABD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35FC1C9218A07C990055DABD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35FC1C9718A07C990055DABD /* XCTest.framework in Frameworks */,
+				35FC1C9918A07C990055DABD /* UIKit.framework in Frameworks */,
+				35FC1C9818A07C990055DABD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		35FC1C6B18A07C980055DABD = {
+			isa = PBXGroup;
+			children = (
+				35FC1C7D18A07C980055DABD /* YiWeather */,
+				35FC1C9C18A07C990055DABD /* YiWeatherTests */,
+				35FC1C7618A07C980055DABD /* Frameworks */,
+				35FC1C7518A07C980055DABD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		35FC1C7518A07C980055DABD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				35FC1C7418A07C980055DABD /* YiWeather.app */,
+				35FC1C9518A07C990055DABD /* YiWeatherTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		35FC1C7618A07C980055DABD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				35FC1C7718A07C980055DABD /* Foundation.framework */,
+				35FC1C7918A07C980055DABD /* CoreGraphics.framework */,
+				35FC1C7B18A07C980055DABD /* UIKit.framework */,
+				35FC1C9618A07C990055DABD /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		35FC1C7D18A07C980055DABD /* YiWeather */ = {
+			isa = PBXGroup;
+			children = (
+				35FC1C8618A07C980055DABD /* YIAppDelegate.h */,
+				35FC1C8718A07C980055DABD /* YIAppDelegate.m */,
+				35FC1C8918A07C980055DABD /* Main.storyboard */,
+				35FC1C8C18A07C980055DABD /* YIViewController.h */,
+				35FC1C8D18A07C980055DABD /* YIViewController.m */,
+				35FC1C8F18A07C980055DABD /* Images.xcassets */,
+				35FC1C7E18A07C980055DABD /* Supporting Files */,
+			);
+			path = YiWeather;
+			sourceTree = "<group>";
+		};
+		35FC1C7E18A07C980055DABD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				35FC1C7F18A07C980055DABD /* YiWeather-Info.plist */,
+				35FC1C8018A07C980055DABD /* InfoPlist.strings */,
+				35FC1C8318A07C980055DABD /* main.m */,
+				35FC1C8518A07C980055DABD /* YiWeather-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		35FC1C9C18A07C990055DABD /* YiWeatherTests */ = {
+			isa = PBXGroup;
+			children = (
+				35FC1CA218A07C990055DABD /* YiWeatherTests.m */,
+				35FC1C9D18A07C990055DABD /* Supporting Files */,
+			);
+			path = YiWeatherTests;
+			sourceTree = "<group>";
+		};
+		35FC1C9D18A07C990055DABD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				35FC1C9E18A07C990055DABD /* YiWeatherTests-Info.plist */,
+				35FC1C9F18A07C990055DABD /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		35FC1C7318A07C980055DABD /* YiWeather */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35FC1CA618A07C990055DABD /* Build configuration list for PBXNativeTarget "YiWeather" */;
+			buildPhases = (
+				35FC1C7018A07C980055DABD /* Sources */,
+				35FC1C7118A07C980055DABD /* Frameworks */,
+				35FC1C7218A07C980055DABD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YiWeather;
+			productName = YiWeather;
+			productReference = 35FC1C7418A07C980055DABD /* YiWeather.app */;
+			productType = "com.apple.product-type.application";
+		};
+		35FC1C9418A07C990055DABD /* YiWeatherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35FC1CA918A07C990055DABD /* Build configuration list for PBXNativeTarget "YiWeatherTests" */;
+			buildPhases = (
+				35FC1C9118A07C990055DABD /* Sources */,
+				35FC1C9218A07C990055DABD /* Frameworks */,
+				35FC1C9318A07C990055DABD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				35FC1C9B18A07C990055DABD /* PBXTargetDependency */,
+			);
+			name = YiWeatherTests;
+			productName = YiWeatherTests;
+			productReference = 35FC1C9518A07C990055DABD /* YiWeatherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		35FC1C6C18A07C980055DABD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = YI;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Yi;
+				TargetAttributes = {
+					35FC1C9418A07C990055DABD = {
+						TestTargetID = 35FC1C7318A07C980055DABD;
+					};
+				};
+			};
+			buildConfigurationList = 35FC1C6F18A07C980055DABD /* Build configuration list for PBXProject "YiWeather" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 35FC1C6B18A07C980055DABD;
+			productRefGroup = 35FC1C7518A07C980055DABD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				35FC1C7318A07C980055DABD /* YiWeather */,
+				35FC1C9418A07C990055DABD /* YiWeatherTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		35FC1C7218A07C980055DABD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35FC1C9018A07C980055DABD /* Images.xcassets in Resources */,
+				35FC1C8218A07C980055DABD /* InfoPlist.strings in Resources */,
+				35FC1C8B18A07C980055DABD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35FC1C9318A07C990055DABD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35FC1CA118A07C990055DABD /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		35FC1C7018A07C980055DABD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35FC1C8818A07C980055DABD /* YIAppDelegate.m in Sources */,
+				35FC1C8E18A07C980055DABD /* YIViewController.m in Sources */,
+				35FC1C8418A07C980055DABD /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35FC1C9118A07C990055DABD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35FC1CA318A07C990055DABD /* YiWeatherTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		35FC1C9B18A07C990055DABD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 35FC1C7318A07C980055DABD /* YiWeather */;
+			targetProxy = 35FC1C9A18A07C990055DABD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		35FC1C8018A07C980055DABD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				35FC1C8118A07C980055DABD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		35FC1C8918A07C980055DABD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				35FC1C8A18A07C980055DABD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		35FC1C9F18A07C990055DABD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				35FC1CA018A07C990055DABD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		35FC1CA418A07C990055DABD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		35FC1CA518A07C990055DABD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		35FC1CA718A07C990055DABD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YiWeather/YiWeather-Prefix.pch";
+				INFOPLIST_FILE = "YiWeather/YiWeather-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		35FC1CA818A07C990055DABD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YiWeather/YiWeather-Prefix.pch";
+				INFOPLIST_FILE = "YiWeather/YiWeather-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		35FC1CAA18A07C990055DABD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/YiWeather.app/YiWeather";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YiWeather/YiWeather-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "YiWeatherTests/YiWeatherTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		35FC1CAB18A07C990055DABD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/YiWeather.app/YiWeather";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YiWeather/YiWeather-Prefix.pch";
+				INFOPLIST_FILE = "YiWeatherTests/YiWeatherTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		35FC1C6F18A07C980055DABD /* Build configuration list for PBXProject "YiWeather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35FC1CA418A07C990055DABD /* Debug */,
+				35FC1CA518A07C990055DABD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		35FC1CA618A07C990055DABD /* Build configuration list for PBXNativeTarget "YiWeather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35FC1CA718A07C990055DABD /* Debug */,
+				35FC1CA818A07C990055DABD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		35FC1CA918A07C990055DABD /* Build configuration list for PBXNativeTarget "YiWeatherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35FC1CAA18A07C990055DABD /* Debug */,
+				35FC1CAB18A07C990055DABD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 35FC1C6C18A07C980055DABD /* Project object */;
+}
