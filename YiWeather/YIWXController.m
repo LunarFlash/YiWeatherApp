@@ -9,7 +9,7 @@
 #import "YIWXController.h"
 #import <LBBlurredImage/UIImageView+LBBlurredImage.h>
 #import "YIWXManager.h"
-#import "YIWXCondition.h"
+
 
 @interface YIWXController ()
 
@@ -18,9 +18,30 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, assign) CGFloat screenHeight;
 
+@property (nonatomic, strong) NSDateFormatter *hourlyFormatter;
+@property (nonatomic, strong) NSDateFormatter *dailyFormatter;
+
 @end
 
 @implementation YIWXController
+
+// As date formatters are expensive to create, we’ll instantiate them in our init method and store references to them using these properties.
+/*
+ -viewDidLoad can actually be called several times in the lifecycle of a view controller. NSDateFormatter objects are expensive to initialize, but by placing them in -init you’ll ensure they’re initialized only once by your view controller.
+ */
+- (id) init
+{
+    if (self = [super init]) {
+        _hourlyFormatter = [[NSDateFormatter alloc] init];
+        _hourlyFormatter.dateFormat = @"h a";
+        
+        _dailyFormatter = [[NSDateFormatter alloc] init];
+        _dailyFormatter.dateFormat = @"EEEE";
+    }
+    return self;
+}
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -155,6 +176,25 @@
          iconView.image = [UIImage imageNamed:[newCondition imageName]];
          
      }];
+    
+    /********** Cocoa bindings **********/
+    
+    // The RAC(…) macro helps keep syntax clean. The returned value from the signal is assigned to the text key of the hiloLabel object.
+    RAC(hiloLabel, text) = [[RACSignal combineLatest:@[
+                                                       // Observe the high and low temperatures of the currentCondition key. Combine the signals and use the latest values for both. The signal fires when either key changes.
+                                                       RACObserve([YIWXManager sharedManager], currentCondition.tempHigh),
+                                                       RACObserve([YIWXManager sharedManager], currentCondition.tempLow)
+                                                       ]
+                             // Reduce the values from your combined signals into a single value; note that the parameter order matches the order of your signals.
+                                              reduce:^(NSNumber *hi, NSNumber *low) {
+                                                  return [NSString  stringWithFormat:@"%.0f° / %.0f°",hi.floatValue,low.floatValue];
+                                              }]
+                            // Again, since you’re working on the UI, deliver everything on the main thread.
+                            deliverOn:RACScheduler.mainThreadScheduler];
+    
+    
+    
+    
 }
 
 
@@ -194,7 +234,16 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    /*
+     We’re using table cells for headers here instead of the built-in section headers which have sticky-scrolling behavior. The table view is set up with paging enabled and sticky-scrolling behavior would look odd in this context
+     */
+    // The first section is for the hourly forecast. Use the six latest hourly forecasts and add one more cell for the header.
+    if (section == 0) {
+        return MIN([[YIWXManager sharedManager].hourlyForecast count], 6) + 1;
+    }
+    
+    // The next section is for daily forecasts. Use the six latest daily forecasts and add one more cell for the header.
+    return MIN([[YIWXManager sharedManager].dailyForecast count], 6) + 1;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -211,6 +260,25 @@
     cell.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.detailTextLabel.textColor = [UIColor whiteColor];
+    
+    
+    if (indexPath.section == 0) {
+        // The first row of each section is the header cell
+        if (indexPath.row == 0) {
+            //[self configureHeaderCell:cell title:@"Hourly Forecast"];
+        } else {
+            // Get the hourly weather and configure the cell using custom configure methods.
+            
+        }
+        
+    } else if (indexPath.section == 1) {
+        
+        
+        
+    }
+    
+    
+    
     
     
     return cell;
