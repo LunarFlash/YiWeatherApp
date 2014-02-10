@@ -177,6 +177,23 @@
          
      }];
     
+    
+    [[RACObserve([YIWXManager sharedManager], hourlyForecast)
+      deliverOn:RACScheduler.mainThreadScheduler]
+     subscribeNext:^(NSArray *newForecast) {
+         [self.tableView reloadData];
+     }];
+    
+    [[RACObserve([YIWXManager sharedManager], dailyForecast)
+      deliverOn:RACScheduler.mainThreadScheduler]
+     subscribeNext:^(NSArray *newForecast) {
+         [self.tableView reloadData];
+     }];
+    
+  
+    
+    
+    
     /********** Cocoa bindings **********/
     
     // The RAC(…) macro helps keep syntax clean. The returned value from the signal is assigned to the text key of the hiloLabel object.
@@ -191,7 +208,6 @@
                                               }]
                             // Again, since you’re working on the UI, deliver everything on the main thread.
                             deliverOn:RACScheduler.mainThreadScheduler];
-    
     
     
     
@@ -262,18 +278,27 @@
     cell.detailTextLabel.textColor = [UIColor whiteColor];
     
     
+    
     if (indexPath.section == 0) {
         // The first row of each section is the header cell
         if (indexPath.row == 0) {
-            //[self configureHeaderCell:cell title:@"Hourly Forecast"];
+            [self configureHeaderCell:cell title:@"Hourly Forecast"];
         } else {
             // Get the hourly weather and configure the cell using custom configure methods.
-            
+            YIWXCondition *weather = [YIWXManager sharedManager].hourlyForecast[indexPath.row - 1];
+            [self configureHourlyCell:cell weather:weather];
         }
         
     } else if (indexPath.section == 1) {
-        
-        
+        // The first row of each section is the header cell
+        if (indexPath.row == 0) {
+            [self configureHeaderCell:cell title:@"Daily Forecast"];
+        }
+        else {
+            // Get the daily weather and configure the cell using another custom configure method.
+            YIWXCondition *weather = [YIWXManager sharedManager].dailyForecast[indexPath.row - 1];
+            [self configureDailyCell:cell weather:weather];
+        }
         
     }
     
@@ -287,11 +312,50 @@
 #pragma mark - UITableViewDelegate
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 44;
+    NSInteger cellCount = [self tableView:tableView numberOfRowsInSection:indexPath.section];
+    return self.screenHeight / (CGFloat)cellCount;
 }
 
+- (void)configureHeaderCell:(UITableViewCell *)cell title:(NSString *)title
+{
+    cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:18];
+    cell.textLabel.text = title;
+    cell.detailTextLabel.text = @"";
+    cell.imageView.image = nil;
+}
 
+- (void)configureHourlyCell:(UITableViewCell *)cell weather:(YIWXCondition *)weather
+{
+    cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:18];
+    cell.detailTextLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:18];
+    cell.textLabel.text = [self.hourlyFormatter stringFromDate:weather.date];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%.0f°",weather.temperature.floatValue];
+    cell.imageView.image = [UIImage imageNamed:[weather imageName]];
+    cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
+}
 
+- (void)configureDailyCell:(UITableViewCell *)cell weather:(YIWXCondition *)weather
+{
+    cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:18];
+    cell.detailTextLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:18];
+    cell.textLabel.text = [self.dailyFormatter stringFromDate:weather.date];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%.0f° / %.0f°",
+                                 weather.tempHigh.floatValue,
+                                 weather.tempLow.floatValue];
+    cell.imageView.image = [UIImage imageNamed:[weather imageName]];
+    cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
+}
 
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    // 1
+    CGFloat height = scrollView.bounds.size.height;
+    CGFloat position = MAX(scrollView.contentOffset.y, 0.0);
+    // 2
+    CGFloat percent = MIN(position / height, 1.0);
+    // 3
+    self.blurredImageView.alpha = percent;
+}
 
 @end
