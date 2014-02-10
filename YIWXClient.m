@@ -86,7 +86,7 @@
 - (RACSignal *)fetchCurrentConditionsForLocation:(CLLocationCoordinate2D)coordinate
 {
     // Format the URL from a CLLocationCoordinate2D obejct using lat and long
-    NSString *urlString = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?lat=%f&long=%f&units=imperial", coordinate.latitude, coordinate.longitude];
+    NSString *urlString = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f&units=imperial", coordinate.latitude, coordinate.longitude];
     NSURL *url = [NSURL URLWithString:urlString];
     
     // Use the method we just built to create the signal. Since the return val is a signal, we can call other ReactiveCocoa methods on it. Here we map the returned value - an instance of NSDictionary into a different value

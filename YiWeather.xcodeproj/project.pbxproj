@@ -248,12 +248,12 @@
 		35FC1C7D18A07C980055DABD /* YiWeather */ = {
 			isa = PBXGroup;
 			children = (
+				35C839D318A5F7150087E00D /* Model */,
 				35D5062D18A86E98003451EC /* Controller */,
 				35C263BC18A09F4000AC6CC2 /* Images */,
 				35FC1C8618A07C980055DABD /* YIAppDelegate.h */,
 				35FC1C8718A07C980055DABD /* YIAppDelegate.m */,
 				35FC1C8918A07C980055DABD /* Main.storyboard */,
-				35C839D318A5F7150087E00D /* Model */,
 				35FC1C8F18A07C980055DABD /* Images.xcassets */,
 				35FC1C7E18A07C980055DABD /* Supporting Files */,
 			);

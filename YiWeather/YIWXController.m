@@ -9,6 +9,7 @@
 #import "YIWXController.h"
 #import <LBBlurredImage/UIImageView+LBBlurredImage.h>
 #import "YIWXManager.h"
+#import "YIWXCondition.h"
 
 @interface YIWXController ()
 
@@ -35,14 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setupViews];
     
-    [[YIWXManager sharedManager] findCurrentLocation];
-    
-}
-
-- (void) setupViews
-{
     // 1  Get and store screen height, we'll need later when displaying weather data in a paged manner
     self.screenHeight = [UIScreen mainScreen].bounds.size.height;
     UIImage *background = [UIImage imageNamed:@"bg"];
@@ -141,8 +135,28 @@
     iconView.contentMode = UIViewContentModeScaleAspectFit;
     iconView.backgroundColor = [UIColor clearColor];
     [header addSubview:iconView];
+
     
+    
+    [[YIWXManager sharedManager] findCurrentLocation];
+    
+    // Observe the currentCondition key on the YIWXManager singleton
+    [[RACObserve([YIWXManager sharedManager], currentCondition)
+     // Delivers and changes in the main thread since we are updating the UI
+     deliverOn:RACScheduler.mainThreadScheduler]
+     subscribeNext:^(YIWXCondition *newCondition) {
+         // Updates the text labels with weather data; you’re using newCondition for the text and not the singleton. The subscriber parameter is guaranteed to be the new value.
+         
+         temperatureLabel.text = [NSString stringWithFormat:@"%.0f°",newCondition.temperature.floatValue];
+         conditionsLabel.text = [newCondition.condition capitalizedString];
+         cityLabel.text = [newCondition.locationName capitalizedString];
+         
+         // Uses the mapped image file name to create an image and sets it as the icon for the view.
+         iconView.image = [UIImage imageNamed:[newCondition imageName]];
+         
+     }];
 }
+
 
 
 

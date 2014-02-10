@@ -50,7 +50,6 @@
         _locationManager = [[CLLocationManager alloc] init];
         _locationManager.delegate = self;
         
-        
         // Create a YIWXClient object for the manager. This handles all network and data parsing, following seperation of convern design pattern
         _client = [[YIWXClient alloc] init];
         
@@ -58,9 +57,11 @@
         [[[[RACObserve(self, currentLocation)
          //In order to continue down the method chain, currentLocation must not be nil.
          ignore:nil]
+           
          // -flattenMap: is very similar to -map:, but instead of mapping each value, it flattens the values and returns one object containing all three signals. In this way, you can consider all three processes as a single unit of work.
          // Flatten and subscribe to all 3 signals when currentLocation updates
            flattenMap:^(CLLocation *newLocation) {
+               
                return [RACSignal merge:@[
                                          [self updateCurrentConditions],
                                          [self updateDailyForecast],
@@ -101,6 +102,7 @@
     // Once we have a location with the proper accuracy, stop further updates
     if (location.horizontalAccuracy > 0) {
         // Setting the currentLocation key triggers the RACObservable we set earlier in the init implmentation
+        
         self.currentLocation = location;
         [self.locationManager stopUpdatingLocation];
     }
