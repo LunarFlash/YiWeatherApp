@@ -1,5 +1,5 @@
 //
-//  YIViewController.h
+//  WXController.h
 //  YiWeather
 //
 //  Created by Yi Wang on 2/3/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YIViewController : UIViewController
+@interface YIWXController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 
 @end

@@ -4,15 +4,25 @@
 //
 //  Created by Yi Wang on 2/3/14.
 //  Copyright (c) 2014 Yi. All rights reserved.
-//
+//  http://www.raywenderlich.com/55384/ios-7-best-practices-part-1
+//  http://www.raywenderlich.com/55386/ios-7-best-practices-part-2
 
 #import "YIAppDelegate.h"
+#import "YIWXController.h"
+#import <TSMessage.h>  // Importing from other projects in the workspace, we use angle brackets instead of quotes.
+
 
 @implementation YIAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // 1  Initialize and set the WXController instance as the application’s root view controller. Usually this controller is a UINavigationController or UITabBarController, but in this case you’re using a single instance of WXController.
+    self.window.rootViewController = [[YIWXController alloc] init];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    // 2  Set the default view controller to display your TSMessages. By doing this, you won’t need to manually specify which controller to use to display alerts.
+    [TSMessage setDefaultViewController: self.window.rootViewController];
     return YES;
 }
 							
