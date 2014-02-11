@@ -302,10 +302,6 @@
         
     }
     
-    
-    
-    
-    
     return cell;
 }
 
@@ -349,12 +345,12 @@
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    // 1
+    // Get the height of the scroll view and the content offset. Cap the offset at 0 so attempting to scroll past the start of the table won’t affect blurring.
     CGFloat height = scrollView.bounds.size.height;
     CGFloat position = MAX(scrollView.contentOffset.y, 0.0);
-    // 2
+    // Divide the offset by the height with a maximum of 1 so that your offset is capped at 100%.
     CGFloat percent = MIN(position / height, 1.0);
-    // 3
+    // Assign the resulting value to the blur image’s alpha property to change how much of the blurred image you’ll see as you scroll.
     self.blurredImageView.alpha = percent;
 }
 

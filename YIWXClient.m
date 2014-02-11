@@ -108,11 +108,11 @@
     return [[self fetchJSONFromURL:url] map:^(NSDictionary *json) {
         // Build RACSequence from the list key of the JSON. RACSequences let us perform reactive cocoa operations on lists
         RACSequence *list = [json[@"list"] rac_sequence];
-        
         // Map the new list of objects. This calls - map: on each object in the list, reutrning a list of new obejcts
         return [[list map:^(NSDictionary *item) {
+        
             // Use MTLJSONAdapter again to convert JSON to a YIWXCondition object
-            return [MTLJSONAdapter modelOfClass:[YIWXCondition class] fromJSONDictionary:json error:nil];
+            return [MTLJSONAdapter modelOfClass:[YIWXCondition class] fromJSONDictionary:item error:nil];
             // Using -map on RacSequence returns another RacSequence, so use this convenience method to get the data as NSArray
         }] array];
     }];
@@ -128,9 +128,10 @@
         // Build a sequence from the list of raw JSON
         RACSequence *list = [json[@"list"] rac_sequence];
         
+      
         // Use a function to map results from JSON to Mantle objects
         return [[list map:^id(NSDictionary *item) {
-            return [MTLJSONAdapter modelOfClass:[YIWXDailyForecast class] fromJSONDictionary:json error:nil];
+            return [MTLJSONAdapter modelOfClass:[YIWXDailyForecast class] fromJSONDictionary:item error:nil];
         }] array];
     }];    
 }
