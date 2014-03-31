@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3543FE1818A9D3E200B7AFAE /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3543FE1618A9D3E200B7AFAE /* bg.png */; };
 		3543FE1918A9D3E200B7AFAE /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3543FE1718A9D3E200B7AFAE /* bg@2x.png */; };
+		35A20AA118E8FD46002185AE /* weatherDemo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 35A20AA018E8FD46002185AE /* weatherDemo.gif */; };
 		35C263BB18A0957700AC6CC2 /* YIWXController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C263BA18A0957700AC6CC2 /* YIWXController.m */; };
 		35C263DA18A09F4F00AC6CC2 /* weather-broken.png in Resources */ = {isa = PBXBuildFile; fileRef = 35C263C018A09F4F00AC6CC2 /* weather-broken.png */; };
 		35C263DB18A09F4F00AC6CC2 /* weather-broken@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35C263C118A09F4F00AC6CC2 /* weather-broken@2x.png */; };
@@ -69,6 +70,7 @@
 		2B2280EE635F482180D7086B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		3543FE1618A9D3E200B7AFAE /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		3543FE1718A9D3E200B7AFAE /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
+		35A20AA018E8FD46002185AE /* weatherDemo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = weatherDemo.gif; sourceTree = "<group>"; };
 		35C263B918A0957700AC6CC2 /* YIWXController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YIWXController.h; sourceTree = "<group>"; };
 		35C263BA18A0957700AC6CC2 /* YIWXController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YIWXController.m; sourceTree = "<group>"; };
 		35C263C018A09F4F00AC6CC2 /* weather-broken.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-broken.png"; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 		35FC1C7E18A07C980055DABD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				35A20AA018E8FD46002185AE /* weatherDemo.gif */,
 				35FC1C7F18A07C980055DABD /* YiWeather-Info.plist */,
 				35FC1C8018A07C980055DABD /* InfoPlist.strings */,
 				35FC1C8318A07C980055DABD /* main.m */,
@@ -375,6 +378,7 @@
 				35C263E118A09F4F00AC6CC2 /* weather-few@2x.png in Resources */,
 				35C263DB18A09F4F00AC6CC2 /* weather-broken@2x.png in Resources */,
 				35C263E218A09F4F00AC6CC2 /* weather-mist.png in Resources */,
+				35A20AA118E8FD46002185AE /* weatherDemo.gif in Resources */,
 				35C263F018A09F4F00AC6CC2 /* weather-tstorm.png in Resources */,
 				35C263F118A09F4F00AC6CC2 /* weather-tstorm@2x.png in Resources */,
 				35FC1C8218A07C980055DABD /* InfoPlist.strings in Resources */,
