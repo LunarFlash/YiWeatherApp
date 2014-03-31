@@ -35,7 +35,6 @@
 {
     NSLog(@"Fetching: %@", url.absoluteString);
     
-    
     // returns signal, will not execute until this signal is subscribed to. fetchJSONFromURL: creates an object for other methods and obejcts to use. This behavior is sometimes called factory pattern.
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         
